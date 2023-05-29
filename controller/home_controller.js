@@ -1,12 +1,15 @@
+// module.exports.home = function(req,res){
+//     //view engine jo setup kiya hai usse le paa raha hai ye
+//     return res.render('home.ejs',{
+//         title:"Home"
+//     });
+// }
+
+
+
 module.exports.home = function(req,res){
-    const a =10;
-    const b = 10;
-    return res.end('<h1>Express is up for codeial!</h1>');
+
+    return res.render('home.ejs',{
+        title:"Home"
+    });
 }
-
-module.exports.raw = function(req,res){
-    
-    return res.end('<h1>I AM YOUR RAW</h1>');
-}
-
-
