@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    //why does i have writen it in the last because this is least important
     name:{
         type:String,
         required:true

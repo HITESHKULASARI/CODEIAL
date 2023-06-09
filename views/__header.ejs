@@ -1,3 +1,34 @@
-<header>
-    page header
+<header id="nav-bar">
+    
+    
+    <ul>
+        <% if(locals.user){%>
+            <li>
+                <a href="/users/profile/"  id="a1">
+                  <b><%= user.name%></b>  
+                </a>
+            </li>
+            <li>
+                <a href="/users/sign-out"  id="a2">
+                  <b>Sign Out</b>
+                    
+                </a>
+            </li>
+        <%}else{%>
+            <li>
+                <a href="/users/sign-in" id="a1">
+                    <b>Sign In</b>
+                    
+                </a>
+            </li>
+            <li>
+                <a href="/users/sign-out" id="a2">
+                    <b>Sign Out</b>             
+                </a>
+            </li>
+        
+        
+        
+        <%}%>
+    </ul>
 </header>

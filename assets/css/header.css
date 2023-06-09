@@ -1,0 +1,26 @@
+#nav-bar {
+  position: fixed;
+  height: 10vh;
+  width: 100vw;
+  margin-top: -2%;
+  background-color: rgba(1, 54, 54, 0.589); }
+  #nav-bar ul {
+    list-style: none; }
+    #nav-bar ul li {
+      display: inline;
+      margin-left: 20px;
+      margin-right: 20px; }
+      #nav-bar ul li #a1 {
+        font-size: 25px;
+        position: fixed;
+        right: 10px;
+        top: 25px;
+        text-decoration: none;
+        color: #cc3838; }
+      #nav-bar ul li #a2 {
+        font-size: 25px;
+        position: fixed;
+        right: 120px;
+        top: 25px;
+        text-decoration: none;
+        color: #cc3838; }
