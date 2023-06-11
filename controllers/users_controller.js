@@ -127,25 +127,25 @@ const fs = require('fs');// file system librarry
 const path = require('path');
 
 module.exports.profile = function (req, res) {
-    // User.findById(req.params.id)
+    User.findById(req.params.id)
         
-    //     .then((user) => {
-    //         console.log(req.params.id,'hihj');
-    //         return res.render('user_profile', {
-    //             title: "user profile",
-    //             profile_user: user
+        .then((user) => {
+            console.log(req.params.id,'hihj');
+            return res.render('user_profile', {
+                title: "user profile",
+                profile_user: user
 
-    //         });
-    //     })
-    //     .catch ((error) => {
-    //               console.log('Error:', error);
-    //               return res.redirect('/');
-    //             });
-    return res.render('user_profile', {
-                    title: "user profile",
-                    profile_user: User
-    
+            });
+        })
+        .catch ((error) => {
+                  console.log('Error:', error);
+                  return res.redirect('/');
                 });
+    // return res.render('user_profile', {
+    //                 title: "user profile",
+    //                 profile_user: User
+    
+    //             });
     
 }
 

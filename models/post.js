@@ -1,12 +1,31 @@
+// const mongoose = require('mongoose');
+// const postSchema = new mongoose.Schema({
+//     content:{
+//         type:String,
+//         required:true
+//     },
+//     user:{
+//         //it has reference to user associated with a particular objectID
+//         type:mongoose.Schema.Types.ObjectId,
+//         ref:'User'
+//     }
+// },{
+//     timestamps:true
+// });
+
+// const Post = mongoose.model('Post',postSchema);
+// module.exports = Post;
+
 const mongoose = require('mongoose');
-const postSchema = new mongoose.Schema({
+
+
+const PostSchema = new mongoose.Schema({
     content:{
-        type:String,
+        type:string,
         required:true
     },
     user:{
-        //it has reference to user associated with a particular objectID
-        type:mongoose.Schema.Types.ObjectId,
+        type:mongoose.Schema.types.ObjectId,
         ref:'User'
     }
 },{
@@ -15,3 +34,21 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model('Post',postSchema);
 module.exports = Post;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

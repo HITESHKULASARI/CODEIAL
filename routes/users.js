@@ -32,7 +32,7 @@ const passport = require('passport');
 //:id ye robo 3t mein jaakr utah lo and yaha pr paste krni pdegi
 //kunal ne ek or chij boli dynamices routes something concept in routes
 // router.get('/profile/:id',passport.checkAuthentication, userController.profile);
-router.get('/profile',passport.checkAuthentication, userController.profile);
+router.get('/profile/:id',passport.checkAuthentication, userController.profile);
 
 
 
