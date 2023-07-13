@@ -28,12 +28,14 @@ router.use('/users', require('./users'));
 
 router.use('/posts', require('./posts'));
 
-// router.use('/comments', require('./comments'));
+
+
+router.use('/comments', require('./comments'));
 // router.use('/likes', require('./like'));
 // router.use('/friends', require('./friendship'));
 
 
-// router.use('/api', require('./api'));
+router.use('/api', require('./api'));
 
 
 

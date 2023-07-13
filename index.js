@@ -9,11 +9,16 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const passportJWT = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 
 
 // const MongoStore = require('connect-mongo')(session);
 const MongoStore= require('connect-mongo');
 const sassMiddleware = require('node-sass-middleware');
+
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 
 app.use(sassMiddleware({
     //from where do i pick up scss file to convert it in css
@@ -28,13 +33,16 @@ app.use(sassMiddleware({
 
 
 
-const flash = require('connect-flash');
+
+
 //for reading through the post request
 app.use(express.urlencoded());
 //we have to tell the app to use it or use cokokie parser
 app.use(cookieParser());
 //for accessing the static files
 app.use(express.static('./assets'));
+//make the upload path available to the browser
+app.use('/uploads',express.static(__dirname+'/uploads'));
 
 app.use(expressLayouts);
 
@@ -90,12 +98,14 @@ app.use(passport.session());
 //wheither session cookie is present or not so whenevr any request is comin in passport.setAuthenticatedUser and user will be set
 //for locals and user should be accessible in your views 
 app.use(passport.setAuthenticatedUser);
-
 app.use(flash());
-// app.use(customMware.setFlash);
+app.use(customMware.setFlash);
+
+
 
 //1st 
 app.use('/',require('./routes'));
+
 
 
 

@@ -127,7 +127,7 @@ passport.use(new LocalStrategy({
                     req.flash('error','invalid username/password');
                     return done(null, false);
                 }
-
+                req.flash('you are logged in');
                 return done(null, user);
             })
 
